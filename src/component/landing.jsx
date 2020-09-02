@@ -23,7 +23,9 @@ class Landing extends Modal {
       const data = snap.val();
       try {
         this.setState({ cards: Object.values(data) });
-      } catch {}
+      } catch {
+        this.setState({ cards: [] });
+      }
     });
   };
   handleToggle = (a, b, c, d, t) => {
@@ -91,7 +93,6 @@ class Landing extends Modal {
       `You are going to delete device: ${e} uid: ${f}`
     );
     if (deleteConf) {
-      console.log("ok");
       fire
         .database()
         .ref("toggle/" + f)

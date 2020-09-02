@@ -3,7 +3,6 @@ import ModalMarkup from "./common/modalMarkup";
 import FormMarkup from "./common/formMarkup";
 class Modal extends Component {
   closeModal = () => {
-    console.log("handle modal pressed");
     this.setState({ isOpen: false });
   };
   randomCode = (length) => {
@@ -19,7 +18,6 @@ class Modal extends Component {
   openModal = () => {
     console.log("handle modal pressed");
     const newId = this.state.addNew.id;
-    console.log(newId);
     this.setState({ isOpen: true, newId: this.randomCode(5) });
   };
   handleChange = (e) => {
@@ -30,7 +28,6 @@ class Modal extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.addNew);
     const refreshForm = {
       id: this.randomCode(5),
       state: 0,
