@@ -6,19 +6,57 @@ class Modal extends Component {
     console.log("handle modal pressed");
     this.setState({ isOpen: false });
   };
+  randomCode = (length) => {
+    var result = "";
+    var characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  };
   openModal = () => {
     console.log("handle modal pressed");
-    this.setState({ isOpen: true });
+    const newId = this.state.addNew.id;
+    console.log(newId);
+    this.setState({ isOpen: true, newId: this.randomCode(5) });
   };
-  renderForm = () => {
-    return <FormMarkup />;
+  handleChange = (e) => {
+    const addNew = { ...this.state.addNew };
+    addNew[e.currentTarget.id] = e.currentTarget.value;
+    this.setState({ addNew });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state.addNew);
+    const refreshForm = {
+      id: this.randomCode(5),
+      state: 0,
+      title: "",
+      subtitle: "",
+      type: "tog",
+    };
+    this.handleAdd();
+    this.setState({ addNew: refreshForm });
+    this.closeModal();
+  };
+  renderForm = (value) => {
+    return (
+      <FormMarkup
+        value={value}
+        onChange={this.handleChange}
+        onSubmit={this.handleSubmit}
+      />
+    );
   };
   renderModal = () => {
     return (
       <ModalMarkup
         isOpen={this.state.isOpen}
         closeModal={this.closeModal}
-        formMarkup={this.renderForm()}
+        formMarkup={this.renderForm(this.state.addNew)}
       />
     );
   };

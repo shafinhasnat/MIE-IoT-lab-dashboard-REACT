@@ -4,3 +4,16 @@
   display: flex;
   justify-content: center;
 }
+.cross {
+  float: right;
+  cursor: pointer;
+}
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: all 200ms ease-in;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transform: translateX(0px);
+}
