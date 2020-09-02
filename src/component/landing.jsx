@@ -108,7 +108,7 @@ class Landing extends Modal {
         <div className="container">
           <div className="row">
             {this.state.cards.map((item) => (
-              <div className="col">
+              <div className="col" key={item.id}>
                 <CardMarkup
                   uid={item.id}
                   label={item.title}

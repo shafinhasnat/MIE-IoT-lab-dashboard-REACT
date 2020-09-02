@@ -28,7 +28,7 @@ const ModalMarkup = (props) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div class="cross">
+        <div className="cross">
           <CancelIcon
             fontSize="large"
             style={{ color: "#9a0036" }}
