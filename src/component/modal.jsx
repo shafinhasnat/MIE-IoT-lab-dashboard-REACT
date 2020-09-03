@@ -16,7 +16,6 @@ class Modal extends Component {
     return result;
   };
   openModal = () => {
-    console.log("handle modal pressed");
     this.setState({ isOpen: true, newId: this.randomCode(5) });
   };
   handleChange = (e) => {
