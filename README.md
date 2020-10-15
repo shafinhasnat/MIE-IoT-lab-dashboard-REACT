@@ -7,6 +7,6 @@ This single page web app is for controlling devices remotely. Until this stage, 
 Each newly added device in the program comes with an unique id. User can use this id to make api request from devices.
 
 ### Add new device
-![Add new device](https://i.ibb.co/NtSKHqQ/121694695-381990022956429-6053530091807832215-n.jpg =250x250)
+![Add new device](https://i.ibb.co/NtSKHqQ/121694695-381990022956429-6053530091807832215-n.jpg)
 ### Device controlling cards
 ![Devices](https://i.ibb.co/zhSsRWN/121611277-709407109982192-1689575882402430966-n.jpg)
